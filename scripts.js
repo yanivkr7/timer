@@ -101,3 +101,4 @@ function unFreezeInputs() {
 	$('#minutes-input').removeAttr('disabled');
 	$('#seconds-input').removeAttr('disabled');
 }
+/*Test */
