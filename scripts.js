@@ -20,8 +20,8 @@ function soundAlarm() {
 }
 
 function updateValue(key, value) {
-	value = value < 0 ? 0 : value;
-	value = value > 59 ? 59 : value;
+	value = value < 0 ? 0 : parseInt(value);
+	value = value > 59 ? 59 : parseInt(value);
 
 	if (key === 'seconds') {
 		if (value < 10) {
@@ -31,13 +31,9 @@ function updateValue(key, value) {
 
 	$('#' + key).html(value || 0);
 	timerObj[key] = value;
-
-	//console.log('minutes =' + timerObj.minutes, 'seconds = ' + timerObj.seconds);
 }
 
 (function detectChanges(key) {
-	//console.log('Detect Changes');
-
 	let input = '#' + key + '-input';
 
 	$(input).change(function() {
